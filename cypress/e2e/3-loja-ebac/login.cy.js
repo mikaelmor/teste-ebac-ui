@@ -14,8 +14,8 @@ describe('Funcionalidade: Login', () => {
     it('Deve fazer login com sucesso', () => {
       cy.get('#username').type ()
       cy.get('#password').type ()
-      cy.get('.woocommerce-form > .button').click()
-      cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, juninho22')
+      cy.get('.woocommerce-form > .button')
+      cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, gabigoalpedro29')
     })
 
 
@@ -30,10 +30,10 @@ describe('Funcionalidade: Login', () => {
 
     it('Deve exibir uma mensagem de erro ao inserir uma senha invãlida', () => {
         
-        cy.get('#username').type ('juninho22@teste.com.br')
+        cy.get('#username').type ('gabigoalpedro29@gmail.com')
         cy.get('#password').type ('fdsfs123')
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-error').should('contain' , 'Erro: A senha fornecida para o e-mail juninho22@teste.com.br está incorreta. Perdeu a senha?')
+        cy.get('.woocommerce-error').should('contain' , 'Erro: A senha fornecida para o e-mail gabigoalpedro29@gmail.com está incorreta. Perdeu a senha?')
 
     });
 
@@ -42,9 +42,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#username').type (dados.usuario)
         cy.get('#password').type (dados.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, juninho22')
-
-
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, gabigoalpedro29')
      });
         })
 
